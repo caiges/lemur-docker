@@ -38,14 +38,14 @@ ENV LC_ALL=en_US.UTF-8
 # Install Lemur
 RUN git config --global url."https://".insteadOf git:// &&\
   cd /usr/local/src &&\
-  git clone https://github.com/netflix/lemur.git &&\
+  git clone https://github.com/caiges/lemur.git &&\
   cd lemur &&\
   git fetch &&\
   pip install --upgrade virtualenv &&\
   virtualenv venv &&\
   export PATH=/usr/local/src/lemur/venv/bin:${PATH} &&\
   pip install --upgrade pip virtualenv &&\
-  git checkout 0.5.0 &&\
+  git checkout fix-pyopenssl &&\
   make develop
 
 # Create static files
