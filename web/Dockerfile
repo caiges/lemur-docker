@@ -45,7 +45,7 @@ RUN git config --global url."https://".insteadOf git:// &&\
   virtualenv venv &&\
   export PATH=/usr/local/src/lemur/venv/bin:${PATH} &&\
   pip install --upgrade pip virtualenv &&\
-  git checkout 0.5.1 &&\
+  git checkout fix-aws-account-number &&\
   make develop
 
 # Create static files
