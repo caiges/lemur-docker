@@ -21,7 +21,7 @@ RUN apt-get update && \
 
 RUN apt-get update && \
   apt-get install -y curl python3.5-dev git sudo libpq-dev libffi-dev \
-    python3-psycopg2 postgresql-client-9.3 postgresql-contrib-9.3 && \
+  python3-psycopg2 postgresql-client-9.3 postgresql-contrib-9.3 && \
   update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
 
 RUN curl -s https://bootstrap.pypa.io/get-pip.py | python
@@ -45,7 +45,7 @@ RUN git config --global url."https://".insteadOf git:// &&\
   virtualenv venv &&\
   export PATH=/usr/local/src/lemur/venv/bin:${PATH} &&\
   pip install --upgrade pip virtualenv &&\
-  git checkout fix-pyopenssl &&\
+  git checkout 0.5.1 &&\
   make develop
 
 # Create static files
